@@ -1,1 +1,340 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cours et exercices d'informatique pour la 2ème année collège. Professeure Imane Dezzazi.">
+<title>Espace Informatique | Imane Dezzazi</title>
 
+<style>
+* { box-sizing: border-box; }
+
+:root {
+  --navy: #082d67;
+  --blue: #0878ed;
+  --bg: #f1f8ff;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--navy);
+  background: var(--bg);
+}
+
+nav {
+  background: var(--navy);
+  color: white;
+  padding: 15px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.brand small {
+  display: block;
+  font-size: 13px;
+  font-weight: normal;
+  margin-top: 5px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 5px;
+  font-size: 14px;
+}
+
+.hero {
+  padding: 45px 6%;
+  background: linear-gradient(120deg, #d9f1ff, #fff 60%, #bce8ff);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 30px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.hero-art {
+  font-size: 90px;
+  flex: 1;
+  min-width: 220px;
+}
+
+.hero-text {
+  flex: 1.3;
+  min-width: 260px;
+}
+
+.hero h1 {
+  font-size: clamp(30px, 5vw, 48px);
+  margin: 0 0 12px;
+}
+
+.hero h1 span { color: var(--blue); }
+
+.hero p {
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+.teacher {
+  display: inline-block;
+  background: #ffdc65;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+main {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px 20px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: clamp(24px, 4vw, 34px);
+}
+
+.section-title p { color: #45638c; }
+
+.units {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: white;
+  border-radius: 18px;
+  padding: 20px 16px;
+  box-shadow: 0 5px 18px #0b4e8520;
+  border-bottom: 5px solid var(--accent);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  min-width: 0;
+}
+
+.number {
+  align-self: flex-start;
+  background: var(--accent);
+  color: white;
+  border-radius: 25px;
+  padding: 6px 16px;
+  font-weight: bold;
+}
+
+.illustration {
+  font-size: 65px;
+  padding: 12px 0;
+  background: var(--pale);
+  border-radius: 50%;
+  margin: 12px 0;
+}
+
+.card h3 {
+  font-size: 19px;
+  line-height: 1.4;
+  min-height: 54px;
+}
+
+.card p {
+  color: #405777;
+  line-height: 1.65;
+  font-size: 14px;
+  flex-grow: 1;
+}
+
+.btn {
+  display: block;
+  background: var(--accent);
+  color: white;
+  padding: 12px 8px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 12px;
+  transition: transform .2s, opacity .2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  opacity: .88;
+}
+
+.features {
+  margin-top: 30px;
+  padding: 22px;
+  background: #dcefff;
+  border-radius: 16px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  text-align: center;
+}
+
+.features div { line-height: 1.6; }
+
+footer {
+  background: var(--navy);
+  color: white;
+  text-align: center;
+  padding: 25px 15px;
+  line-height: 1.8;
+}
+
+footer a {
+  color: #91d7ff;
+  margin: 0 7px;
+}
+
+@media (max-width: 850px) {
+  .units { grid-template-columns: repeat(2, 1fr); }
+  .features { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  nav { justify-content: center; text-align: center; }
+  .brand { width: 100%; }
+  .units { grid-template-columns: 1fr; }
+  .hero { padding: 30px 16px; }
+  .hero-art { font-size: 65px; }
+  .features { grid-template-columns: 1fr 1fr; }
+  .card h3 { min-height: auto; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="brand">
+    💻 Espace Informatique
+    <small>2ème année collège</small>
+  </div>
+  <div>
+    <a href="#accueil">Accueil</a>
+    <a href="#unites">Les unités</a>
+    <a href="#apropos">À propos</a>
+  </div>
+</nav>
+
+<header class="hero" id="accueil">
+  <div class="hero-art" aria-hidden="true">💻 📚</div>
+  <div class="hero-text">
+    <h1>Bienvenue sur<br><span>Espace Informatique</span></h1>
+    <p>Cours et exercices de la 2ème année collège</p>
+    <div class="teacher">👩‍🏫 Professeure Imane Dezzazi</div>
+    <p>Apprendre · S'entraîner · Réussir</p>
+  </div>
+</header>
+
+<main>
+  <section id="unites">
+    <div class="section-title">
+      <h2>📘 Les unités du premier trimestre</h2>
+      <p>Découvrez les cours, faites les exercices et progressez à votre rythme.</p>
+    </div>
+
+    <div class="units">
+
+      <article class="card"
+        style="--accent:#7139d0;--pale:#f0e7ff">
+        <span class="number">Unité 1</span>
+        <div class="illustration">🖥️</div>
+        <h3>Environnement matériel</h3>
+        <p>
+          Composants de l'ordinateur, périphériques,
+          ports, unités de mesure, systèmes
+          d'exploitation et réseaux.
+        </p>
+        <a class="btn" href="https://tabdellah.github.io/u1/"
+           target="_blank" rel="noopener noreferrer">
+          📖 Cours et exercices →
+        </a>
+      </article>
+
+      <article class="card"
+        style="--accent:#009765;--pale:#dcf8e9">
+        <span class="number">Unité 2</span>
+        <div class="illustration">🌐</div>
+        <h3>Échange d'informations via réseau local</h3>
+        <p>
+          Adresse IP, partage de fichiers et de dossiers,
+          communication sur le réseau local.
+        </p>
+        <a class="btn" href="https://tabdellah.github.io/u2/"
+           target="_blank" rel="noopener noreferrer">
+          📖 Cours et exercices →
+        </a>
+      </article>
+
+      <article class="card"
+        style="--accent:#0878ed;--pale:#e0f2ff">
+        <span class="number">Unité 3</span>
+        <div class="illustration">📊</div>
+        <h3>Tableur (Excel)</h3>
+        <p>
+          Création de tableaux, formules de calcul,
+          fonctions, tri et analyse des données.
+        </p>
+        <a class="btn" href="https://tabdellah.github.io/u3/"
+           target="_blank" rel="noopener noreferrer">
+          📖 Cours et exercices →
+        </a>
+      </article>
+
+      <article class="card"
+        style="--accent:#f47700;--pale:#fff0dc">
+        <span class="number">Unité 4</span>
+        <div class="illustration">🐢</div>
+        <h3>Programmation LOGO</h3>
+        <p>
+          Découverte de la programmation, commandes
+          de la tortue, figures géométriques,
+          couleurs et réalisation d'applications.
+        </p>
+        <a class="btn" href="https://tabdellah.github.io/u4/"
+           target="_blank" rel="noopener noreferrer">
+          📖 Cours et exercices →
+        </a>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="features">
+    <div>🎯<br><strong>Apprendre par la pratique</strong></div>
+    <div>⭐<br><strong>Des exercices progressifs</strong></div>
+    <div>⚙️<br><strong>Maîtriser les compétences</strong></div>
+    <div>📈<br><strong>Vers la réussite</strong></div>
+  </section>
+</main>
+
+<footer id="apropos">
+  <strong>Espace Informatique</strong> — 2ème année collège
+  <br>
+  Préparé par Professeure Imane Dezzazi
+  <p>Ensemble vers la réussite !</p>
+  <a href="https://tabdellah.github.io/u1/">Unité 1</a>
+  <a href="https://tabdellah.github.io/u2/">Unité 2</a>
+  <a href="https://tabdellah.github.io/u3/">Unité 3</a>
+  <a href="https://tabdellah.github.io/u4/">Unité 4</a>
+</footer>
+
+</body>
+</html>
